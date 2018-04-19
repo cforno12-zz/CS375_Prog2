@@ -14,5 +14,5 @@ compile:
 clean:
 	rm -rf $(EXEC) $(OBJ)
 test:
-	./$(EXEC) input1.txt output1.txt
-	cat output1.txt
+	./$(EXEC) input.txt output.txt
+	cat output.txt
