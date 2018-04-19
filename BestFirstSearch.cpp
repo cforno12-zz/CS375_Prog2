@@ -91,7 +91,10 @@ int main(int argc, char** argv){
     int max_profit = 0;
 
     //creating a priority queue to traverse through the node
-    std::priority_queue<Node, std::vector<Node>, std::function<bool(Node, Node)>> Q(Compare);
+    // Using lambda to compare elements.
+    auto cmp = [](Node left, Node right) { return () < (right ^ 1);};
+    //std::priority_queue<int, std::vector<int>, decltype(cmp)> q3(cmp);
+    priority_queue<Node, vector<Node>, function<bool(Node, Node)>> Q(Compare);
     Node current = Node();
     Node next = Node(); //next is the child of current
 
